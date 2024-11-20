@@ -1,0 +1,237 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff; /* White background */
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0.5em 0;
+    color: #002a40; /* Navy blue for headings */
+    background: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    padding: 4em 1em;
+    text-align: center;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #ffffff 30%, #002a40 70%); /* Gradient from white to navy blue */
+    color: #ffffff; /* White text */
+    padding: 1em 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.logo img {
+    max-height: 50px; /* Adjust logo size */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+.nav-links a {
+    color: #ffffff; /* White text */
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background: #bf9a33; /* Gold hover effect */
+}
+
+
+/* Hero Section */
+#hero {
+    background: url('[Insert Hero Image URL]') no-repeat center center/cover;
+    color: #002a40; /* White text */
+    padding: 5em 1em;
+    text-align: center;
+}
+
+.cta-button {
+    background: #bf9a33; /* Gold button */
+    color: white;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #9c7c2e; /* Darker gold on hover */
+}
+
+/* Card Grid */
+.service-cards, .destination-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+}
+
+.card, .destination {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #ffffff; /* White background for cards */
+}
+
+.card img, .destination img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3, .destination-name {
+    margin-top: 1em;
+    color: #002a40; /* Navy blue for text */
+}
+
+/* Contact Section */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+label, input, textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+input, textarea {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #002a40; /* Navy blue button */
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #bf9a33; /* Gold button hover */
+}
+
+/* Footer */
+footer {
+    background: #002a40; /* Navy blue background */
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Make the navigation links stack vertically on smaller screens */
+    .nav-links {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    /* Adjust the hero section text for small screens */
+    #hero h1 {
+        font-size: 1.8em;
+    }
+
+    .cta-button {
+        padding: 0.5em 1em; /* Smaller buttons on mobile */
+    }
+
+    /* Ensure images take up full width on mobile */
+    .destination img, .card img {
+        height: 200px; /* Maintain height ratio */
+        object-fit: cover;
+    }
+    
+    /* Adjust service card grid layout for smaller screens */
+    .service-cards, .destination-gallery {
+        grid-template-columns: 1fr 1fr; /* Two columns instead of more */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Make hero text more compact */
+    #hero h1 {
+        font-size: 1.5em;
+    }
+
+    .cta-button {
+        padding: 0.4em 0.8em; /* Even smaller buttons */
+    }
+    
+    /* Adjust contact form layout */
+    form {
+        width: 100%;
+        padding: 1em;
+    }
+
+    /* Reduce padding in sections for mobile screens */
+    section {
+        padding: 2em 1em;
+    }
+}
+
+
+/* Make sure body and html take up the full viewport height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Flexbox for the entire body */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is at the top, footer at the bottom */
+}
+
+/* Content section (all the sections above the footer) should expand to fill remaining space */
+main {
+    flex-grow: 1;
+}
+
+/* Footer styles */
+footer {
+    background-color: #002a40; /* Use your brand color or adjust */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
